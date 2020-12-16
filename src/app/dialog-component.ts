@@ -6,11 +6,8 @@ export interface DialogData {
   name: string;
 }
 
-/**
- * @title Dialog Overview
- */
 @Component({
-  selector: 'dialog-overview-example-dialog',
+  selector: 'dialog-component',
   templateUrl: 'dialog-component.html',
 })
 export class DialogComponent {
