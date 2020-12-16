@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import {MatNativeDateModule} from '@angular/material/core';
 
 import {DemoMaterialModule} from './material-module';
-
+import { DialogComponent } from './dialog-component';
 
 @NgModule({
   imports: [
@@ -19,8 +19,10 @@ import {DemoMaterialModule} from './material-module';
   ],
   declarations: [
     AppComponent,
+    DialogComponent
 
   ],
+  entryComponents: [DialogComponent],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

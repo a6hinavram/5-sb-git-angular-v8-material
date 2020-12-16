@@ -1,4 +1,7 @@
-import { Component } from "@angular/core";
+import {Component, Inject} from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { DialogComponent } from './dialog-component';
+
 
 export interface Food {
   value: string;
@@ -10,11 +13,20 @@ export interface Food {
   templateUrl: "./app.component.html"
 })
 export class AppComponent {
-  title = "my-first-app";
+   animal: string;
+  name: string;
 
-  foods: Food[] = [
-    { value: "steak-0", viewValue: "Steak" },
-    { value: "pizza-1", viewValue: "Pizza" },
-    { value: "tacos-2", viewValue: "Tacos" }
-  ];
+  constructor(public dialog: MatDialog) {}
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      width: '250px',
+      data: {name: this.name, animal: this.animal}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.animal = result;
+    });
+  }
 }
