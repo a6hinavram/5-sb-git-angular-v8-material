@@ -3,14 +3,15 @@ import { BrowserModule }  from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { MatSliderModule } from '@angular/material/slider';
-
+import {MatSelectModule} from '@angular/material/select';
+import {MatNativeDateModule} from '@angular/material/core';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
-    MatSliderModule
+    MatSelectModule,
+    MatNativeDateModule
   ],
   declarations: [
     AppComponent,
